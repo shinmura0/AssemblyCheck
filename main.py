@@ -254,7 +254,7 @@ def heatmap(box_left, box_top, box_right, box_bottom):##
         map_ref += temp
     elif map_flag == "start":
         temp = np.zeros(map_result.shape)
-        temp[box_top:box_bottom, box_left:box_right] = 1
+        temp[np.max([box_top,0]):box_bottom, np.max([box_left,0]):box_right] = 1
         map_result += temp
 
 
